@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet"  type="text/css" href="menu.css">
@@ -10,18 +10,18 @@
 
 
 
- <!----> <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">-->
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
   <link rel="stylesheet" href="menus.css">
 </head>
 <body>
   <main>
       <h1>Diaporama</h1>
 
-      <!-- Conteneur principal de tout le diaporama -->
+   
       <div class="diapo">
-          <!-- Conteneur des "diapos" -->
+         
           <div class="elements">
-              <!-- Première diapo -->
+       
               <div class="element active">
                   <img src="1.jpg" alt="Image 1">
                   <div class="caption">
@@ -29,7 +29,7 @@
                       
                   </div>
               </div>
-              <!-- Deuxième diapo -->
+              
               <div class="element">
                   <img src="2.jpg" alt="Image 2">
                   <div class="caption">
@@ -37,7 +37,7 @@
                       
                   </div>
               </div>
-              <!-- Troisième diapo -->
+            
               <div class="element">
                   <img src="3.jpg" alt="Image 3">
                   <div class="caption">
@@ -45,7 +45,7 @@
                       
                   </div>
               </div>
-              <!-- Quatrième diapo -->
+             
               <div class="element">
                   <img src="2.jpg" alt="Image 2" >
                   <div class="caption">
@@ -54,12 +54,12 @@
                   </div>
               </div>
           </div>
-          <!-- Flèches de navigation -->
+          
           <i id="nav-gauche" class="las la-chevron-left"></i>
           <i id="nav-droite" class="las la-chevron-right"></i>
       </div>
   </main>
-  <!-- Fichiers JS -->
+  
   <script src="code.js"></script>
 
 
@@ -82,3 +82,11 @@
 </body>
 
 </html> 
+-->
+
+
+<?php
+require_once("AnnoceView.php") ;
+$c= new AnnonceView() ;
+$c->afficher_annonces();
+?>
