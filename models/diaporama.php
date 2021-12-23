@@ -1,5 +1,5 @@
 <?php
-class annonce_model{
+class DiaporamaModel{
 
    private $dbname="esitransport"; 
    private $host="127.0.0.1";
@@ -31,14 +31,13 @@ class annonce_model{
    {
        return $c->query($r) ;
    }
-
-public function get_annonces_model()
-{
-    $c=$this->connexion("esitransport","127.0.0.1","root","");
-    $qf="select * from annonce";
-    $r=$this->requete($c,$qf);
-    $this->deconnexion($c);
-    return $r;
-}
-}
+   public function get_diaporama_model()
+   {
+       $c=$this->connexion("esitransport","127.0.0.1","root","");
+       $qf="select * from diaporama";
+       $r=$this->requete($c,$qf);
+       $this->deconnexion($c);
+       return $r;
+   } 
+}  
 ?>

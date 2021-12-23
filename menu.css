@@ -1,6 +1,6 @@
 
 
-/*Reset CSS*/
+
 *{
     margin: 0px;
     padding: 0px;
@@ -108,3 +108,28 @@ main{
 }
 
 
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .child {
+    flex: 1 0 21%; 
+    margin: 5px;
+    max-height: 250px;
+    background-color: grey;
+  }
+
+  p.annonce{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+.ann{
+    width:50%;
+    height:50%
+    
+}

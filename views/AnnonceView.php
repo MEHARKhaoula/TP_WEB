@@ -1,34 +1,44 @@
 <?php
+require_once('../controller/AnnonceController.php');
 Class AnnonceView
 {
-    public function afficher_annonces() {
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet"  type="text/css" href="menu.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<?php
-try{
+    public function afficher_annonces()
+{
+
+
     $cf= new AnnonceController() ;
     $qtf=$cf->get_annonces_controller();
-    $size = $qtf->fetch(PDO::FETCH_ASSOC)["Data_length"];
+   
     $i=0;
-
       echo'<div class="parent">';
-      while ($row=$qtf->fetch() && $i<4) 
+      while ($row = $qtf->fetch(PDO::FETCH_ASSOC) ) 
       {
-        echo '<div class="child"><h2>.$row['titre'].</h2><img src=".$row['img']." alt="" /><p>.$row['description'].</p><a href="#" class="readmore">Read More</a> </div>';
+        $link="../images/".$row['img'];
+      
+        if($i < 4)
+        {
+          echo '<div class="child">';
+          echo '<h2>'.$row['titre'].'</h2>';
+          echo '<img class="ann" src='.$link.">";
+     
+          echo '<p class="annonce">'.$row['description']."</p>";
+          echo '<a href="#" class="readmore">Read More</a>'; 
+          echo '</div>';
+         
+        }
+        else{
+          exit();
+        }
+        $i++;
       }
-      echo'</div>'      
-    }
+      echo'</div>' ;
+      echo $i ;     
+   
 
    
     
 }
-?>
-    }
+
+   
 }
-</body>
+?>
