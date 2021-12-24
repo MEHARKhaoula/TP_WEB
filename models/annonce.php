@@ -40,6 +40,16 @@ public function get_annonces_model()
     $this->deconnexion($c);
     return $r;
 }
+
+
+public function get_annonce_model($wilaya_depart,$wilaya_arrive)
+{
+    $c=$this->connexion("esitransport","127.0.0.1","root","");
+    $qf="select * from annonce where wilaya_depart=".$wilaya_depart."and wilaya_arrive=".$wilaya_arrive.";";
+    $r=this->requete($c,$qf);
+    $this->deconnexion($c);
+    return $r;
+}
 public function add($titr,$desc,$pointdepart,$pointarrive,$wilaya_depart,$wilaya_arrive,$typetransport,$poids_inf,$poids_sup,$moyen_transport,$etat,$volume_inf,$volume_sup,$img)
 {
     $c=$this->connexion("esitransport","127.0.0.1","root","");
@@ -61,7 +71,7 @@ public function add($titr,$desc,$pointdepart,$pointarrive,$wilaya_depart,$wilaya
 
 
    $sql->execute();
-   
+    $this->deconnexion($c);
 
 
 }

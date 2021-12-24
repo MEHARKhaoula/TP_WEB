@@ -1,0 +1,165 @@
+
+body{
+  margin: 5%;
+  padding: 5%;
+ font-family: "Quicksand", sans-serif;
+  background-color: #666;
+}
+
+nav{
+  width: 100%;
+  margin: 0px auto 40px auto;
+  background-color: white;
+  position: -webkit-sticky;
+  top: 0px;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  float: left;
+  width: 25%;/*100% divisé par le nombre d'éléments de menu*/
+  text-align: center;/*Centre le texte dans les éléments de menu*/
+}
+
+/*Evite que le menu n'ait une hauteur nulle*/
+nav ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav a{
+  display: block; /*Toute la surface sera cliquable*/
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+  padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
+}
+
+nav a:hover{
+  color: orange;
+  border-bottom: 2px solid gold;
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*body {
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #7f7fd5;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}*/
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80%px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height:50%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex: 0 0 21%; 
+    
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
+
+
+
+p.card__body {
+  /*padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+ 
+ 
+}
+
+
+.tag {
+  align-self: flex-end;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.tag + .tag {
+ /* margin-left: .5em;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.tag-blue {
+  background: #56CCF2;
+background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+
+
+
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+}
+
+.user__info > small {
+  color: #666;
+}

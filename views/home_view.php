@@ -10,7 +10,7 @@ public function entetepage()
     
   echo'  <html>
     <head>
-      <link rel="stylesheet"  type="text/css" href="../menu.css">
+      <link rel="stylesheet"  type="text/css" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>';
@@ -92,7 +92,15 @@ public function entetepage()
     }
    
 
-
+public function rechercher()
+{
+  echo'<form action="" method="post" >
+      <label for="d">Wilaya de départ:</label><br>
+        <input type="text" name="d"  /><br>
+        <label for="a">Wilaya daarive:</label><br>
+        <input type="text" name="a"  /><br>
+        <input type="submit" value="Rechercher" name="submit"/>';
+}
 
 
 }
