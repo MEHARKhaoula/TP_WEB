@@ -10,6 +10,7 @@ public function entetepage()
     
   echo'  <html>
     <head>
+      <link rel="stylesheet"  type="text/css" href="../diaporama.css">
       <link rel="stylesheet"  type="text/css" href="../style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -17,48 +18,65 @@ public function entetepage()
      
 }
 
+public function rechercher()
+{
+  $c= new AnnonceView() ;
+  $c->rechercher() ;
+}
 
-
-  /*  public function afficher_Diaporama()
+   public function afficher_Diaporama()
     {
-        
-      
-      echo '<main>
-        <div class="diapo">
-        <div class="elements">';
-       
         $cf= new DiaporamaController() ;
         $qtf=$cf->get_diaporama_controller();
        
-        $i=1;
+       
+        echo'<div class="slideshow-container">';
         while ($row = $qtf->fetch(PDO::FETCH_ASSOC) ) 
         {
-         $link="../images/".$row['img'];
-            if($i==1)
-            {
-                echo  '<div class="element active">';
-                echo "<img src=".$link.">";
-                echo  '</div>';
-            }
-            else
-            {
-                echo  '<div class="element">';
-                echo "<img src=".$link.">";
-                echo '</div>';
-
-            }
-            $i++;
+         $link="../images/diaporamas/".$row['img'];
+           
+        echo' <div class="mySlides fade">
+         <div class="numbertext">1 / 3</div>
+         <img src='.$link.' style="width:100%">
+         <div class="text">Caption Text</div>
+       </div>';
+             
+            
+           
+            
         } 
+
+        echo '</div>';
         
-         
+      echo  '<div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>';
+      echo'<script>
+      var slideIndex = 0;
+      showSlides();
       
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+      </script>';
      
-         echo'</div><i id="nav-gauche" class="las la-chevron-left"></i>
-          <i id="nav-droite" class="las la-chevron-right"></i>
-      </div>
-  </main>';
- 
-    }*/
+        
+    }
     public function afficher_annonces()
     {
         $c= new AnnonceView() ;
@@ -91,16 +109,6 @@ public function entetepage()
       </html>';
     }
    
-
-public function rechercher()
-{
-  echo'<form action="" method="post" >
-      <label for="d">Wilaya de départ:</label><br>
-        <input type="text" name="d"  /><br>
-        <label for="a">Wilaya daarive:</label><br>
-        <input type="text" name="a"  /><br>
-        <input type="submit" value="Rechercher" name="submit"/>';
-}
 
 
 }
