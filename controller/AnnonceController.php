@@ -10,10 +10,10 @@ class AnnonceController
         return $r;
     }
 
-    public function get_annonce_controller($wilaya_depart,$wilaya_arrive) 
+    public function get_annonce_recherche_controller($wilaya_depart,$wilaya_arrive) 
     {
         $mtf=new Annonce() ;
-        $r=$mtf->get_annonces_model($wilaya_depart,$wilaya_arrive);
+        $r=$mtf->get_annonce_model($wilaya_depart,$wilaya_arrive);
         return $r;
     }
 }
