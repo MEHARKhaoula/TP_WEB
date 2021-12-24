@@ -1,9 +1,9 @@
 
 
 
-*{
-    margin: 0px;
-    padding: 0px;
+body{
+    margin: 5%;
+    padding: 5%;
     font-family: Avenir, sans-serif;
 }
 
@@ -112,22 +112,29 @@ main{
 .parent {
     display: flex;
     flex-wrap: wrap;
+    
   }
   
-  .child {
-    flex: 1 0 21%; 
+  .parent>* {
+    flex: 0 0 21%; 
+    
     margin: 5px;
-    max-height: 250px;
+    height: 100%;
     background-color: grey;
   }
 
   p.annonce{
     overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+   /* -webkit-line-clamp: 3;*/
     -webkit-box-orient: vertical;
+    height:15%;
   }
 
+  h2.titre{
+      height:10%;
+  }
 .ann{
     width:50%;
     height:50%

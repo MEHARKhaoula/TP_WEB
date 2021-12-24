@@ -18,7 +18,7 @@ Class AnnonceView
         if($i < 4)
         {
           echo '<div class="child">';
-          echo '<h2>'.$row['titre'].'</h2>';
+          echo '<h2 class="titre">'.$row['titre'].'</h2>';
           echo '<img class="ann" src='.$link.">";
      
           echo '<p class="annonce">'.$row['description']."</p>";
@@ -27,7 +27,15 @@ Class AnnonceView
          
         }
         else{
-          exit();
+        $i=0;
+          echo '<div class="child">';
+          echo '<h2>'.$row['titre'].'</h2>';
+          echo '<img class="ann" src='.$link.">";
+     
+          echo '<p class="annonce">'.$row['description']."</p>";
+          echo '<a href="#" class="readmore">Read More</a>'; 
+          echo '</div>';
+
         }
         $i++;
       }

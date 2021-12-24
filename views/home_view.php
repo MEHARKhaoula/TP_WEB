@@ -63,9 +63,7 @@ public function entetepage()
     {
         $c= new AnnonceView() ;
         $c->afficher_annonces();
-        echo'</body>
-
-        </html>';
+       
     } 
     public function afficher_menu()
     {
@@ -83,11 +81,16 @@ public function entetepage()
     }
    
 
-  /*  public function afficher_formulaire()
+    public function afficher_formulaire()
     {
-    
+      $c= new AddAnnonceView() ;
+     
+      $c->afficher_form();
+      echo'</body>
+
+      </html>';
     }
-    */
+   
 
 
 

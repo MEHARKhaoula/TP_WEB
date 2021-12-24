@@ -1,5 +1,5 @@
 <?php
-class annonce_model{
+class Annonce{
 
    private $dbname="esitransport"; 
    private $host="127.0.0.1";
@@ -40,5 +40,32 @@ public function get_annonces_model()
     $this->deconnexion($c);
     return $r;
 }
+public function add($titr,$desc,$pointdepart,$pointarrive,$wilaya_depart,$wilaya_arrive,$typetransport,$poids_inf,$poids_sup,$moyen_transport,$etat,$volume_inf,$volume_sup,$img)
+{
+    $c=$this->connexion("esitransport","127.0.0.1","root","");
+    $sql =$c->prepare("INSERT INTO annonce (titre,description,point_depart,point_arrive,wilaya_depart,wilaya_arrive,type_transport,poids_inf,poids_sup,moyen_transport,etat,volume_inf,volume_sup,img) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");;
+    $sql->bindParam(1,$titr);
+   $sql->bindParam(2,$desc);
+   $sql->bindParam(3,$pointdepart);
+   $sql->bindParam(4,$pointarrive);
+   $sql->bindParam(5,$wilaya_depart);
+   $sql->bindParam(6,$wilaya_arrive);
+   $sql->bindParam(7,$typetransport);
+   $sql->bindParam(8,$poids_inf);
+   $sql->bindParam(9,$poids_sup);
+   $sql->bindParam(10,$moyen_transport);
+   $sql->bindParam(11,$etat);
+   $sql->bindParam(12,$volume_inf);
+   $sql->bindParam(13,$volume_sup);
+   $sql->bindParam(14,$img);
+
+
+   $sql->execute();
+   
+
+
 }
+}
+
+
 ?>

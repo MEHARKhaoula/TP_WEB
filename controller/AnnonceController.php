@@ -5,7 +5,7 @@ class AnnonceController
 {
     public function get_annonces_controller()
     {
-        $mtf=new annonce_model() ;
+        $mtf=new Annonce() ;
         $r=$mtf->get_annonces_model();
         return $r;
     }
