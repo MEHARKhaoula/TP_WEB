@@ -13,8 +13,7 @@ public function envoyer_form()
 			
             $titr=$_POST['titre'];
             $desc=$_POST['description'];
-            $pointdepart =$_POST['adressed'];
-            $pointarrive=$_POST['adressea'];
+           
             $wilaya_depart=$_POST['depart'];
             $wilaya_arrive=$_POST['arrive'];
             $typetransport=$_POST['type'];
@@ -30,7 +29,7 @@ public function envoyer_form()
             $img=$folder ;
             move_uploaded_file($tempname, $folder);
 		    $c = new Annonce() ;
-            $c->add($titr,$desc,$pointdepart,$pointarrive,$wilaya_depart,$wilaya_arrive,$typetransport,$poids_inf,$poids_sup,$moyen_transport,$etat,$volume_inf,$volume_sup,$img);
+            $c->add($titr,$desc,$wilaya_depart,$wilaya_arrive,$typetransport,$poids_inf,$poids_sup,$moyen_transport,$etat,$volume_inf,$volume_sup,$img);
 		
         
 		
